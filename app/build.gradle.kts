@@ -9,7 +9,7 @@ plugins {
 android {
 
     namespace = "com.futuristicMobileApps.pdftools"
-
+ 
     compileSdk = 34
 
     defaultConfig {

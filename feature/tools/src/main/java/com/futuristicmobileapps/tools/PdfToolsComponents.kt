@@ -2,6 +2,7 @@ package com.futuristicmobileapps.tools
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
@@ -21,7 +22,8 @@ fun getBasicToolsList(pdfToolsIcons: PdfToolsIcons) = mutableListOf(
     PdfTool(action = Action.REMOVE_DUPLICATE, label = R.string.remove_duplicate, icon = pdfToolsIcons.merge),
     PdfTool(action = Action.INVERT, label = R.string.invert_pdf, icon = pdfToolsIcons.merge),
     PdfTool(action = Action.ADD_PAGE_NUMBER, label = R.string.add_page_number, icon = pdfToolsIcons.merge),
-    PdfTool(action = Action.IMAGES_TO_PDF, label = R.string.images_to_pdf, icon = pdfToolsIcons.merge)
+    PdfTool(action = Action.IMAGES_TO_PDF, label = R.string.images_to_pdf, icon = pdfToolsIcons.merge),
+    PdfTool(action = Action.ADD_WATERMARK, label = R.string.add_watermark, icon = pdfToolsIcons.merge),
 )
 
 fun getSecureToolsList(pdfToolsIcons: PdfToolsIcons) = mutableListOf(
@@ -30,7 +32,6 @@ fun getSecureToolsList(pdfToolsIcons: PdfToolsIcons) = mutableListOf(
 )
 
 fun getOtherToolsList(pdfToolsIcons: PdfToolsIcons) = mutableListOf(
-    PdfTool(action = Action.ADD_WATERMARK, label = R.string.add_watermark, icon = pdfToolsIcons.merge),
     PdfTool(action = Action.DOC_TO_PDF, label = R.string.doc_to_pdf, icon = pdfToolsIcons.merge),
 )
 
@@ -60,7 +61,7 @@ fun ToolsAdaptiveLayout(
     if (remainder > 1)
         numberOfColumns += 1
 
-    Column {
+    Column(modifier = Modifier.padding(start = 2.dp)) {
 
         for (column in 0..numberOfColumns) {
 

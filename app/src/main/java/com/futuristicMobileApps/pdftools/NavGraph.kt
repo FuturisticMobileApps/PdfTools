@@ -59,7 +59,7 @@ sealed class BottomAppBarScreens(
 fun PdfToolsNavGraph(navHostController: NavHostController, paddingValues: PaddingValues) {
 
     NavHost(
-        modifier = Modifier.padding(),
+        modifier = Modifier.padding(paddingValues),
         navController = navHostController,
         startDestination = BottomAppBarScreens.Tools.route
     ) {

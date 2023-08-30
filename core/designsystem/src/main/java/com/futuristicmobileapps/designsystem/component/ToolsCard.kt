@@ -6,6 +6,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -25,6 +26,9 @@ import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.futuristicmobileapps.designsystem.R
+import com.futuristicmobileapps.designsystem.theme.Size.corner10
+import com.futuristicmobileapps.designsystem.theme.cardBackground
+import com.futuristicmobileapps.designsystem.theme.textColor
 
 @Composable
 fun ToolsCard(
@@ -36,8 +40,8 @@ fun ToolsCard(
     Card(
         modifier = modifier
             .clickable { onToolClicked() },
-        shape = RoundedCornerShape(10.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.onPrimaryContainer),
+        shape = RoundedCornerShape(corner10),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.cardBackground),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 10.dp,
             pressedElevation = 15.dp,
@@ -57,34 +61,62 @@ fun ToolsCard(
             )
 
             Text(
-                modifier = Modifier.padding(top = 8.dp),
+                modifier = Modifier.padding(top = 8.dp, start = 2.dp, end = 2.dp),
                 textAlign = TextAlign.Center,
                 text = stringResource(toolText),
-                color = MaterialTheme.colorScheme.onPrimary,
-                style = MaterialTheme.typography.bodySmall
+                color = MaterialTheme.colorScheme.textColor,
+                style = MaterialTheme.typography.bodyMedium
             )
         }
     }
 }
 
 @Composable
-fun ToolsHeaderText(
+fun PageHeader(
     @StringRes name: Int,
-    modifier: Modifier
+    modifier: Modifier = Modifier
 ) {
 
     Text(
         text = stringResource(id = name).toUpperCase(Locale.current),
-        style = MaterialTheme.typography.headlineSmall,
-        color = MaterialTheme.colorScheme.onPrimary,
+        style = MaterialTheme.typography.headlineMedium,
+        color = MaterialTheme.colorScheme.textColor,
         modifier = modifier
     )
+}
+
+
+@Composable
+fun AppHeader(
+    @StringRes name: Int = R.string.pdf_tools,
+    modifier: Modifier = Modifier
+) {
+
+    Row(
+        modifier = Modifier.padding(horizontal = 12.dp, vertical = 14.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+
+        Image(
+            painter = painterResource(id = R.drawable.pdf_icon),
+            contentDescription = "pdfIcon"
+        )
+
+        Text(
+            text = stringResource(id = name),
+            style = MaterialTheme.typography.headlineLarge,
+            color = MaterialTheme.colorScheme.textColor,
+            modifier = modifier.padding(start = 8.dp)
+        )
+
+    }
+
 }
 
 @Preview(showBackground = true)
 @Composable
 fun PreviewHeader() {
-    ToolsHeaderText(name = R.string.modify_tools, Modifier.padding(start = 10.dp))
+    PageHeader(name = R.string.modify_tools, Modifier.padding(start = 10.dp))
 }
 
 @Preview(showBackground = true)

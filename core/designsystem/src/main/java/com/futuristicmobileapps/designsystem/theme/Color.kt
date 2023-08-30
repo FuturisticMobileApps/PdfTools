@@ -1,87 +1,113 @@
 package com.futuristicmobileapps.designsystem.theme
 
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
 
-val pdfToolsLightPrimary = Color(0xFF4A58A9)
-val pdfToolsLightOnPrimary = Color(0xFFFFFFFF)
-val pdfToolsLightPrimaryContainer = Color(0xFFDEE0FF)
-val pdfToolsLightOnPrimaryContainer = Color(0xFF00105C)
-val pdfToolsLightSecondary = Color(0xFF4559A9)
-val pdfToolsLightOnSecondary = Color(0xFFFFFFFF)
-val pdfToolsLightSecondaryContainer = Color(0xFFDDE1FF)
-val pdfToolsLightonSecondaryContainer = Color(0xFF001453)
-val pdfToolsLightTertiary = Color(0xFF275EA7)
-val pdfToolsLightOnTertiary = Color(0xFFFFFFFF)
-val pdfToolsLightTertiaryContainer = Color(0xFFD6E3FF)
-val pdfToolsLightOnTertiaryContainer = Color(0xFF001B3D)
-val pdfToolsLightError = Color(0xFFBA1A1A)
-val pdfToolsLightErrorContainer = Color(0xFFFFDAD6)
-val pdfToolsLightOnError = Color(0xFFFFFFFF)
-val pdfToolsLightOnErrorContainer = Color(0xFF410002)
-val pdfToolsLightBackground = Color(0xFFF3F8FE)
-val pdfToolsLightOnBackground = Color(0xFF380036)
-val pdfToolsLightSurface = Color(0xFFFFFBFF)
-val pdfToolsLightOnSurface = Color(0xFF380036)
-val pdfToolsLightSurfaceVariant = Color(0xFFE3E1EC)
-val pdfToolsLightOnSurfaceVariant = Color(0xFF46464F)
-val pdfToolsLightOutline = Color(0xFF767680)
-val pdfToolsLightInverseOnSurface = Color(0xFFFFEBF7)
-val pdfToolsLightInverseSurface = Color(0xFF551251)
-val pdfToolsLightInversePrimary = Color(0xFFBAC3FF)
-val pdfToolsLightShadow = Color(0xFF000000)
-val pdfToolsLightSurfaceTint = Color(0xFF4A58A9)
-val pdfToolsLightOutlineVariant = Color(0xFFC7C5D0)
-val pdfToolsLightScrim = Color(0xFF000000)
+// New Colors
+val backgroundEndLight = Color(0xFFf5f5f5)
+val backgroundStartLight = Color(0xFFe7e6e2)
+val backgroundDark = Color(0xFF2b2c32)
+val primaryOrange = Color(0xFFFD694c)
+val cardBackgroundLight = Color(0xFFfafeff)
+val cardBackgroundDark = Color(0xFF353840)
+val containerLight = Color(0xFFffeae6)
+//val selectedIconLight = Color(0xFFFD694c)
+val selectedIconLight = primaryOrange
+val unselectedIconLight = Color(0xFFc2c8d6)
+val textColorLight = Color(0xFF2d2942)
+val textColorDark = Color(0xFFe7e7e7)
 
-val pdfToolsDarkPrimary = Color(0xFFBAC3FF)
-val pdfToolsDarkOnPrimary = Color(0xFF172778)
-val pdfToolsDarkPrimaryContainer = Color(0xFF313F90)
-val pdfToolsDarkOnPrimaryContainer = Color(0xFFDEE0FF)
-val pdfToolsDarkSecondary = Color(0xFFB8C4FF)
-val pdfToolsDarkOnSecondary = Color(0xFF0F2878)
-val pdfToolsDarkSecondaryContainer = Color(0xFF2B4090)
-val pdfToolsDarkOnSecondaryContainer = Color(0xFFDDE1FF)
-val pdfToolsDarkTertiary = Color(0xFFA9C7FF)
-val pdfToolsDarkOnTertiary = Color(0xFF003063)
-val pdfToolsDarkTertiaryContainer = Color(0xFF00468B)
-val pdfToolsDarkOnTertiaryContainer = Color(0xFFD6E3FF)
-val pdfToolsDarkError = Color(0xFFFFB4AB)
-val pdfToolsDarkErrorContainer = Color(0xFF93000A)
-val pdfToolsDarkOnError = Color(0xFF690005)
-val pdfToolsDarkOnErrorContainer = Color(0xFFFFDAD6)
-val pdfToolsDarkBackground = Color(0xFF380036)
-val pdfToolsDarkOnBackground = Color(0xFFFFD7F4)
-val pdfToolsDarkSurface = Color(0xFF380036)
-val pdfToolsDarkOnSurface = Color(0xFFFFD7F4)
-val pdfToolsDarkSurfaceVariant = Color(0xFF46464F)
-val pdfToolsDarkOnSurfaceVariant = Color(0xFFC7C5D0)
-val pdfToolsDarkOutline = Color(0xFF90909A)
-val pdfToolsDarkInverseOnSurface = Color(0xFF380036)
-val pdfToolsDarkInverseSurface = Color(0xFFFFD7F4)
-val pdfToolsDarkInversePrimary = Color(0xFF4A58A9)
-val pdfToolsDarkShadow = Color(0xFF000000)
-val pdfToolsDarkSurfaceTint = Color(0xFFBAC3FF)
-val pdfToolsDarkOutlineVariant = Color(0xFF46464F)
-val pdfToolsDarkScrim = Color(0xFF000000)
-
-val seed = Color(0xFF5B628F)
-val blackBackground = Color(0xFF211134)
+val orange = Color(0xFFFD694c)
+val lightBlack = Color(0xFF4D4867)
+val lightYellow = Color(0xFFFFD88D)
 
 
-/*
-val ColorScheme.textColor: Color
+val DeepNavyBlue = Color(0xFF003366)
+val SteelGray = Color(0xFF808080)
+val LightGray = Color(0xFFF0F0F0)
+val Charcoal = Color(0xFF333333)
+val White = Color.White
+
+
+val lightPrimary = Color(0xFFe18138)
+val lightBackground = Color(0xFFf9fafe)
+val lightSurfaceVariant = Color.White
+
+val darkPrimary = Color(0xFFFFEDE4)
+val darkBackground = Color(0xFF2b2c32)
+
+
+val backgroundStart: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) taupe800 else taupe100
+    get() = if (!isSystemInDarkTheme()) backgroundStartLight else backgroundDark
+
+val backgroundEnd: Color
+    @Composable
+    get() = if (!isSystemInDarkTheme()) backgroundEndLight else backgroundDark
 
 val ColorScheme.cardBackground: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) taupe100.copy(alpha = 0.24f) else taupe100.copy(0.24f)
+    get() = if (!isSystemInDarkTheme()) cardBackgroundLight else cardBackgroundDark
 
-val ColorScheme.iconBackground: Color
+val ColorScheme.container: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) taupe100 else rust300.copy(alpha = 0.12f)
+    get() = if (!isSystemInDarkTheme()) containerLight else containerLight
+
+val ColorScheme.selectedIcon: Color
+    @Composable
+    get() = if (!isSystemInDarkTheme()) selectedIconLight else selectedIconLight
+
+val ColorScheme.unSelectedIcon: Color
+    @Composable
+    get() = if (!isSystemInDarkTheme()) unselectedIconLight else unselectedIconLight
+
+val ColorScheme.textColor: Color
+    @Composable
+    get() = if (!isSystemInDarkTheme()) textColorLight else textColorDark
+
+
+
+
+// GradientColors
+val backgroundBrush: Brush
+    @Composable
+    get() = Brush.horizontalGradient(
+        listOf(
+            backgroundStart,
+            backgroundEnd
+        )
+    )
+
+
+/*
+private val LightColorScheme = darkColorScheme(
+    background = Color(0xFFf9fafe),
+    onPrimary = Color(0xFF34393a),
+    inversePrimary = Color(0xFFfafcfe),
+    primary = Color(0xFFe18138),
+    primaryContainer = Color(0xFFffdbc7),
+    secondary = Color(0xFFa0a2a8),
+    onSecondary = Color(0xFF7e8080),
+    secondaryContainer = Color(0xFFffede4),
+    onPrimaryContainer = Color(0xFFffffff)
+)
+
+private val DarkColorScheme = lightColorScheme(
+    background = Color(0xFF2b2c32),
+    onPrimary = Color(0xFFfafcfe),
+    onSecondary = Color(0xFFfafcfe).copy(alpha = 0.8f),
+    inversePrimary = Color(0xFF34393a),
+    primary = Color(0xFFFFEDE4),
+    secondary = Color(0xFFac8a76),
+    secondaryContainer = Color(0xFF964908),
+    onPrimaryContainer = Color(0xFF353840),
+)
 */
+
 
 
 

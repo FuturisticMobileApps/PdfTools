@@ -57,7 +57,7 @@ fun ToolsCard(
                 painter = painterResource(imageDrawable),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(48.dp),
+                    .size(height = 42.dp, width = 36.dp),
             )
 
             Text(

@@ -3,7 +3,7 @@
     <string name="tools_icon">tools_icon</string>
     <string name="merge_pdf">Merge PDF</string>
     <string name="split_pdf">Split PDF</string>
-    <string name="rotate_pdf">Rotate PDF</string>
+    <string name="rotate_pages">Rotate Pages</string>
     <string name="invert_pdf">Invert PDF</string>
     <string name="compress_pdf">Compress PDF</string>
     <string name="remove_pages">Remove pages</string>

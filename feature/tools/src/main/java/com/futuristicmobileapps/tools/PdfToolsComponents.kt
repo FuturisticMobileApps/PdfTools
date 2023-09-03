@@ -14,21 +14,23 @@ import com.futuristicmobileapps.tools.util.Action
 import com.futuristicmobileapps.tools.util.PdfTool
 import kotlin.math.roundToInt
 
-fun getBasicToolsList(pdfToolsIcons: PdfToolsIcons) = mutableListOf(
-    PdfTool(action = Action.SPLIT, label = R.string.split_pdf, icon = pdfToolsIcons.merge),
-    PdfTool(action = Action.MERGE, label = R.string.merge_pdf, icon = pdfToolsIcons.merge),
-    PdfTool(action = Action.ROTATE, label = R.string.rotate_pdf, icon = pdfToolsIcons.merge),
-    PdfTool(action = Action.REORDER, label = R.string.reorder_pages, icon = pdfToolsIcons.merge),
-    PdfTool(action = Action.REMOVE_DUPLICATE, label = R.string.remove_duplicate, icon = pdfToolsIcons.merge),
-    PdfTool(action = Action.INVERT, label = R.string.invert_pdf, icon = pdfToolsIcons.merge),
-    PdfTool(action = Action.ADD_PAGE_NUMBER, label = R.string.add_page_number, icon = pdfToolsIcons.merge),
-    PdfTool(action = Action.IMAGES_TO_PDF, label = R.string.images_to_pdf, icon = pdfToolsIcons.merge),
-    PdfTool(action = Action.ADD_WATERMARK, label = R.string.add_watermark, icon = pdfToolsIcons.merge),
+fun getBasicToolsList() = mutableListOf(
+    PdfTool(action = Action.SPLIT, label = R.string.split_pdf, icon = R.drawable.split_icon),
+    PdfTool(action = Action.MERGE, label = R.string.merge_pdf, icon =R.drawable.merge_icon),
+    PdfTool(action = Action.ADD_PAGE_NUMBER, label = R.string.add_page_number, icon = R.drawable.add_page_number_icon),
+    PdfTool(action = Action.REORDER, label = R.string.reorder_pages, icon = R.drawable.re_order_icon),
+    PdfTool(action = Action.REMOVE_PAGE, label = R.string.remove_pages, icon = R.drawable.remove_page_icon),
+    PdfTool(action = Action.ROTATE, label = R.string.rotate_pages, icon = R.drawable.rotate_icon),
+    PdfTool(action = Action.IMAGES_TO_PDF, label = R.string.images_to_pdf, icon = R.drawable.images_pdf_icon),
+    PdfTool(action = Action.PDF_TO_IMAGES, label = R.string.extract_images, icon = R.drawable.pdf_images_icon),
+    PdfTool(action = Action.ADD_WATERMARK, label = R.string.add_watermark, icon =R.drawable.add_watermark_icon),
+    PdfTool(action = Action.INVERT, label = R.string.invert_pdf, icon = R.drawable.invert_pdf_icon),
+    PdfTool(action = Action.REMOVE_DUPLICATE, label = R.string.remove_duplicate, icon = R.drawable.reomve_duplicate_icon),
 )
 
-fun getSecureToolsList(pdfToolsIcons: PdfToolsIcons) = mutableListOf(
-    PdfTool(action = Action.ADD_PASSWORD, label = R.string.secure_pdf, icon = pdfToolsIcons.merge),
-    PdfTool(action = Action.REMOVE_PASSWORD, label = R.string.remove_password, icon = pdfToolsIcons.merge),
+fun getSecureToolsList() = mutableListOf(
+    PdfTool(action = Action.ADD_PASSWORD, label = R.string.secure_pdf, icon = R.drawable.lock_pdf_icon),
+    PdfTool(action = Action.REMOVE_PASSWORD, label = R.string.remove_password, icon = R.drawable.unlock_pdf_icon),
 )
 
 fun getOtherToolsList(pdfToolsIcons: PdfToolsIcons) = mutableListOf(

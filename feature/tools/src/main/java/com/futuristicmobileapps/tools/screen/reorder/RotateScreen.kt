@@ -53,7 +53,7 @@ fun RotateScreen(
                 .fillMaxSize()
         ) {
 
-            ToolDetailTopBar(title = R.string.rotate_pdf) {
+            ToolDetailTopBar(title = R.string.rotate_pages) {
                 navHostController.popBackStack()
             }
 
@@ -104,7 +104,7 @@ fun RotateScreen(
             }
 
 
-            ActionButton(text = R.string.rotate_pdf, modifier = Modifier.padding(16.dp)) {
+            ActionButton(text = R.string.rotate_pages, modifier = Modifier.padding(16.dp)) {
                 rotateViewModel.rotatePdf(context) {
                     navHostController.navigate("files") {
                         popUpTo("tools_graph")

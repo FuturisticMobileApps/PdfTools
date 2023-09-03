@@ -61,9 +61,8 @@ fun ToolsScreen(
     val cardHeight = if (screenWidth.isPortrait()) cardWidth + 10.dp else 134.dp
 
     val pdfToolsIcons = PdfToolsIcons(isSystemInDarkTheme())
-    val basicToolsList = getBasicToolsList(pdfToolsIcons)
-    val secureToolsList = getSecureToolsList(pdfToolsIcons)
-    val otherToolsList = getOtherToolsList(pdfToolsIcons)
+    val basicToolsList = getBasicToolsList()
+    val secureToolsList = getSecureToolsList()
 
     var pdfAction by remember { mutableStateOf(Action.NONE) }
 
@@ -200,8 +199,11 @@ fun ToolsScreen(
                     }
                 }
 
-                Action.NONE -> {}
+                Action.REMOVE_PAGE -> {}
 
+                Action.PDF_TO_IMAGES -> {}
+
+                Action.NONE -> {}
             }
 
         }

@@ -72,14 +72,14 @@ fun ToolsCard(
 }
 
 @Composable
-fun PageHeader(
+fun PageSubHeader(
     @StringRes name: Int,
     modifier: Modifier = Modifier
 ) {
 
     Text(
         text = stringResource(id = name).toUpperCase(Locale.current),
-        style = MaterialTheme.typography.headlineMedium,
+        style = MaterialTheme.typography.titleMedium,
         color = MaterialTheme.colorScheme.textColor,
         modifier = modifier
     )
@@ -116,7 +116,7 @@ fun AppHeader(
 @Preview(showBackground = true)
 @Composable
 fun PreviewHeader() {
-    PageHeader(name = R.string.modify_tools, Modifier.padding(start = 10.dp))
+    PageSubHeader(name = R.string.modify_tools, Modifier.padding(start = 10.dp))
 }
 
 @Preview(showBackground = true)

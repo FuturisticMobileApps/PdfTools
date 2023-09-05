@@ -15,11 +15,19 @@ val primaryOrange = Color(0xFFFD694c)
 val cardBackgroundLight = Color(0xFFfafeff)
 val cardBackgroundDark = Color(0xFF353840)
 val containerLight = Color(0xFFffeae6)
+
 //val selectedIconLight = Color(0xFFFD694c)
 val selectedIconLight = primaryOrange
 val unselectedIconLight = Color(0xFFc2c8d6)
-val textColorLight = Color(0xFF2d2942)
+val textColorLight = Color(0xFF36314e)
 val textColorDark = Color(0xFFe7e7e7)
+val subTitleLight = Color(0xFFa1a9ad)
+val subTitleDark = Color(0xFFD3E0EA )
+val iconColor = Color(0xFFc69c84)
+val iconColorLight = Color(0xFFce8761)
+val iconColorDark = Color(0xFF7D4A2A )
+val iconBackgroundLight = Color(0xFFfbfaf8)
+val iconBackgroundDark = Color(0xFF3A3A3A)
 
 val orange = Color(0xFFFD694c)
 val lightBlack = Color(0xFF4D4867)
@@ -69,7 +77,17 @@ val ColorScheme.textColor: Color
     @Composable
     get() = if (!isSystemInDarkTheme()) textColorLight else textColorDark
 
+val ColorScheme.subTextColor: Color
+    @Composable
+    get() = if (!isSystemInDarkTheme()) subTitleLight else subTitleDark
 
+val ColorScheme.icon: Color
+    @Composable
+    get() = if (!isSystemInDarkTheme()) iconColorLight else iconColorDark
+
+val ColorScheme.iconsBackground: Color
+    @Composable
+    get() = if (!isSystemInDarkTheme()) iconBackgroundLight else iconBackgroundDark
 
 
 // GradientColors

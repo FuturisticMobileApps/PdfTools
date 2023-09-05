@@ -5,7 +5,6 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -18,7 +17,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,7 +25,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.futuristicmobileapps.designsystem.R
 import com.futuristicmobileapps.designsystem.component.AppHeader
-import com.futuristicmobileapps.designsystem.component.PageHeader
+import com.futuristicmobileapps.designsystem.component.PageSubHeader
 import com.futuristicmobileapps.designsystem.theme.PdfToolsIcons
 import com.futuristicmobileapps.designsystem.theme.Size
 import com.futuristicmobileapps.designsystem.util.isValidString
@@ -224,7 +222,7 @@ fun ToolsScreen(
                 .verticalScroll(rememberScrollState()),
         ) {
 
-            PageHeader(
+            PageSubHeader(
                 name = R.string.modify_tools,
                 modifier = Modifier.padding(start = 12.dp, top = 12.dp)
             )
@@ -246,7 +244,7 @@ fun ToolsScreen(
                 }
             }
 
-            PageHeader(
+            PageSubHeader(
                 name = R.string.secure_tools,
                 modifier = Modifier.padding(start = 12.dp, top = 12.dp)
             )

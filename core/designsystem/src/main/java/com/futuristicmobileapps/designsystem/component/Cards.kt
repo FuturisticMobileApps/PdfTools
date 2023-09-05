@@ -1,5 +1,6 @@
 package com.futuristicmobileapps.designsystem.component
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -26,11 +28,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.futuristicmobileapps.designsystem.R
+import com.futuristicmobileapps.designsystem.theme.cardBackground
+import com.futuristicmobileapps.designsystem.theme.icon
+import com.futuristicmobileapps.designsystem.theme.iconsBackground
+import com.futuristicmobileapps.designsystem.theme.textColor
 import com.futuristicmobileapps.designsystem.util.SplitRange
 import com.futuristicmobileapps.designsystem.util.intToString
 import com.futuristicmobileapps.designsystem.util.isValidInt
@@ -207,9 +216,84 @@ fun DetailScreenCard(
     }
 }
 
-
 @Composable
 fun FileDetailsCard(
+    modifier: Modifier,
+    name: String,
+    date: String = "",
+    size: String,
+    totalPages: String? = null,
+    isLoading: Boolean = false
+) {
+
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.cardBackground),
+        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+    ) {
+
+
+        Row(modifier = Modifier.padding(10.dp)) {
+
+            Column(modifier = Modifier.weight(1f)) {
+
+                Text(
+                    text = name,
+                    style = MaterialTheme.typography.bodyMedium.copy(fontSize = 18.sp),
+                    color = MaterialTheme.colorScheme.textColor
+                )
+
+                Text(
+                    modifier = Modifier.padding(top = 6.dp),
+                    text = "$date, $size, $totalPages pages",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.textColor
+                )
+            }
+
+            Row {
+
+                CircleIcon(icon = R.drawable.preview_icon, modifier = Modifier.padding(end = 6.dp))
+
+                CircleIcon(icon = R.drawable.refresh_icon)
+
+            }
+
+
+        }
+
+
+    }
+
+}
+
+@Composable
+fun CircleIcon(
+    modifier: Modifier = Modifier,
+    @DrawableRes icon: Int
+) {
+
+    Card(
+        modifier = modifier,
+        shape = CircleShape,
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.iconsBackground),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 2.dp,
+            pressedElevation = 4.dp,
+        )
+    ) {
+        Image(
+            modifier = Modifier,
+            painter = painterResource(id = icon),
+            colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.primary),
+            contentDescription = stringResource(id = R.string.round_icon)
+        )
+    }
+}
+
+
+@Composable
+fun FileDetailsCard2(
     name: String,
     size: String,
     totalPages: String? = null,
@@ -289,7 +373,9 @@ fun PdfCard(
 ) {
 
     Card(
-        modifier = Modifier.fillMaxWidth().padding(8.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.onPrimaryContainer),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 8.dp,

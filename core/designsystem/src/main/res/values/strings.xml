@@ -37,4 +37,16 @@
 
     <string name="pdf_tools">PDF Tools</string>
 
+    <string name="split_ranges">Split Ranges</string>
+    <string name="split_options">Split Options</string>
+    <string name="custom_split_range">Add Split Range</string>
+    <string name="custom_range_sub_text">Set custom split ranges Ex : (1–10), (14–34)</string>
+    <string name="fixed_range">Fixed range</string>
+    <string name="fixed_range_sub_text">Split PDF into equal page ranges</string>
+    <string name="separate_all_pages">Separate all pages</string>
+    //content description
+    <string name="back_icon">Back Icon</string>
+    <string name="round_icon">Round Icon</string>
+    <string name="forward_icon">Forward Icon</string>
+
 </resources>
